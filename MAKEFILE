@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 PRINTF_PATH = ./ft_printf
 PRINTF_LIB  = $(PRINTF_PATH)/libftprintf.a
 PRINTF_INC  = -I $(PRINTF_PATH)
-SOURCES = parsing_arg.c utils.c main.c
+SOURCES = parsing_arg.c utils.c main.c ft_strcmp.c
 OBJECTS = $(SOURCES:.c=.o)
 
 all: $(NAME)

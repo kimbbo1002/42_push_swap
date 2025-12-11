@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:40:14 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/10 15:23:17 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/11 14:40:04 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	init_data(t_data *data)
 {
 	data->a = NULL;
 	data->b = NULL;
+	ft_bzero(&data->ops, sizeof(t_operation));
 	data->strategy = START_ADAPTIVE;
 	data->bench_mode = false;
 	data->disorder = 0.0;
@@ -60,5 +61,3 @@ void	add_stack(t_stack **numbers, t_stack *store)
 		last = last->next;
 	last->next = store;
 }
-
-

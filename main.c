@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:44:57 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/10 17:54:56 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/11 12:56:42 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,66 @@ void	print_stack(t_stack *stack)
 		stack = stack->next;
 	}
 }
+
+static int	manage_flags2(char *argv, t_data *data)
+{
+	if (ft_strcmp(argv, "--complex") == 0)
+	{
+		data->strategy = START_COMPLEX;
+		return (1);
+	}
+	if (ft_strcmp(argv, "--adaptive") == 0)
+	{
+		data->strategy = START_ADAPTIVE;
+		return (1);
+	}
+	return (0);
+}
+
+static int	manage_flags(char *argv, t_data *data)
+{
+	if (ft_strcmp(argv, "--simple") == 0)
+	{
+		data->strategy = START_SIMPLE;
+		return (1);
+	}
+	if (ft_strcmp(argv, "--bench") == 0)
+	{
+		data->bench_mode = true;
+		return (1);
+	}
+	if (ft_strcmp(argv, "--medium") == 0)
+	{
+		data->strategy = START_MEDIUM;
+		return (1);
+	}
+	return (manage_flags2(argv, data));
+}
+
 int	main(int argc, char **argv)
 {
 	int		i;
-	t_stack	*numbers;
+	t_data	data;
 
-	i = 1;
-	numbers = NULL;
 	if (argc < 2)
 		return (0);
+	init_data (&data);
+	i = 1;
 	while (i < argc)
 	{
-		if (parsing_arg (argv[i], &numbers) == 0)
+		if (manage_flags(argv[i], &data) == 1)
+			i++;
+		else
 		{
-			write(2, "ERROR\n", 6);
-			return (0);
+			if (parsing_arg (argv[i], &data.a) == 0)
+			{
+				write(2, "ERROR\n", 6);
+				return (0);
+			}
+			i++;
 		}
-		i++;
 	}
-	print_stack(numbers);
+	data.disorder = calc_disorder (data.a);
+	print_stack(data.a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:23:19 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/10 17:54:11 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/11 11:04:33 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,5 @@ int	parsing_arg(char *stack, t_stack **digit_stack)
 			&& (stack[i] < 9 || stack[i] > 13))
 			return (0);
 	}
-		return (1);
+	return (1);
 }
