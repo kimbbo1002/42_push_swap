@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 14:45:23 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/11 15:25:55 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/11 17:13:02 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ void	exec_op2(t_data *data, char *operation)
 	{
 		rrb(&data->b);
 		data->operation.rrb++;
+	}
+	if (ft_strcmp(operation, "ss") == 0)
+	{
+		ss(&data->a, &data->b);
+		data->operation.ss++;
 	}
 	exec_op3(data, operation);
 

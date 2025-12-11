@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:00:53 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/11 15:23:40 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/11 17:29:01 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,7 @@ int		parsing_arg(char *stack, t_stack **digit_stack);
 int		ft_strcmp(char *s1, char *s2);
 double	calc_disorder(t_stack *a);
 void	ft_bzero(void *s, size_t n);
+void	exec_op(t_data *data, char *operation);
+int stack_size(t_stack *stack);
 
 #endif
