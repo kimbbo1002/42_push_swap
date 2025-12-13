@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:00:53 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/11 17:29:01 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:35:01 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct t_stack
 
 typedef struct operation
 {
+	int	total;
 	int	pa;
 	int	pb;
 	int sa;
@@ -56,17 +57,22 @@ typedef struct s_data
 # define START_MEDIUM 2
 # define START_COMPLEX 3
 
-void	sa(t_stack **a);
-void	sb(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **a, t_stack **b);
-void	ra(t_stack **a);
-void	rb(t_stack **b);
-void	rr(t_stack **a, t_stack **b);
-void	rra(t_stack **a);
-void	rra(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
+//operations
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ss(t_data *data);
+void	pa(t_data *data);
+void	pb(t_data *data);
+
+void	ra(t_data *data);
+void	rb(t_data *data);
+void	rr(t_data *data);
+
+void	rra(t_data *data);
+void	rrb(t_data *data);
+void	rrr(t_data *data);
+
+
 void	init_data(t_data *data);
 int		duplicate(t_stack *stack, int num);
 t_stack	*store(int content);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 15:51:07 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/11 17:52:18 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:26:53 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ static void	move_min(t_data *data)
 	if (min_idx <= size / 2)
 	{
 		while (i++ < min_idx)
-			exec_op(data, "ra");
+			ra(data);
 	}
 	else
 	{
 		while (i++ < size - min_idx)
-			exec_op(data, "rra");
+			rra(data);
 	}
-	exec_op (data, "pb");
+	pb(data);
 }
 
 void	simple_algo(t_data *data)
@@ -67,7 +67,7 @@ void	simple_algo(t_data *data)
 	if (size == 2)
 	{
 		if (data->a->value > data->a->next->value)
-			exec_op(data, "sa");
+			sa(data);
 		return ;
 	}
 	while (size > 0)
@@ -77,5 +77,5 @@ void	simple_algo(t_data *data)
 	}
 	i = 0;
 	while (data->b != NULL)
-		exec_op (data, "pa");
+		pa(data);
 }
