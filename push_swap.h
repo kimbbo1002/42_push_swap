@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:00:53 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/13 17:35:01 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/13 18:19:44 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 typedef struct t_stack
 {
 	int				value;
+	int				index;
 	struct t_stack	*next;
 }	t_stack;
 
 typedef struct operation
 {
-	int	total;
 	int	pa;
 	int	pb;
 	int sa;
@@ -57,22 +57,17 @@ typedef struct s_data
 # define START_MEDIUM 2
 # define START_COMPLEX 3
 
-//operations
 void	sa(t_data *data);
 void	sb(t_data *data);
 void	ss(t_data *data);
 void	pa(t_data *data);
 void	pb(t_data *data);
-
 void	ra(t_data *data);
 void	rb(t_data *data);
 void	rr(t_data *data);
-
 void	rra(t_data *data);
 void	rrb(t_data *data);
 void	rrr(t_data *data);
-
-
 void	init_data(t_data *data);
 int		duplicate(t_stack *stack, int num);
 t_stack	*store(int content);

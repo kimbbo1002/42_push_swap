@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:40:14 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/11 17:38:37 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/13 14:50:10 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_stack	*store(int content)
 	if (new_num == 0)
 		return (NULL);
 	new_num->value = content;
+	new_num->value = -1;
 	new_num->next = NULL;
 	return (new_num);
 }
