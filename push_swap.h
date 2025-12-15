@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:00:53 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/13 18:19:44 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:20:15 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct operation
 	int	rra;
 	int	rrb;
 	int	rrr;
+	int	total;
 }t_operation;
 
 typedef struct s_data
@@ -49,13 +50,6 @@ typedef struct s_data
 	bool		bench_mode;
 	double		disorder;
 }	t_data;
-
-
-
-# define START_ADAPTIVE 0
-# define START_SIMPLE 1
-# define START_MEDIUM 2
-# define START_COMPLEX 3
 
 void	sa(t_data *data);
 void	sb(t_data *data);
@@ -77,6 +71,13 @@ int		ft_strcmp(char *s1, char *s2);
 double	calc_disorder(t_stack *a);
 void	ft_bzero(void *s, size_t n);
 void	exec_op(t_data *data, char *operation);
-int stack_size(t_stack *stack);
+int		stack_size(t_stack *stack);
+void	simple_algo(t_data *data);
+void	medium_sort(t_data *data, int range);
+void	dispatch_op(t_data *data);
+void	ft_putstr_error(char *s);
+void	ft_putnbr_error(int n);
+void	ft_putfloat_error(double n);
+void	bench_mode(t_data *data, double disorder);
 
 #endif

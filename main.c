@@ -6,14 +6,14 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:44:57 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/11 12:56:42 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:38:24 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libftprintf/ft_printf.h"
 
-void	print_stack(t_stack *stack)
+static void	print_stack(t_stack *stack)
 {
 	while (stack != NULL)
 	{
@@ -26,12 +26,12 @@ static int	manage_flags2(char *argv, t_data *data)
 {
 	if (ft_strcmp(argv, "--complex") == 0)
 	{
-		data->strategy = START_COMPLEX;
+		data->strategy = 3;
 		return (1);
 	}
 	if (ft_strcmp(argv, "--adaptive") == 0)
 	{
-		data->strategy = START_ADAPTIVE;
+		data->strategy = 0;
 		return (1);
 	}
 	return (0);
@@ -41,7 +41,7 @@ static int	manage_flags(char *argv, t_data *data)
 {
 	if (ft_strcmp(argv, "--simple") == 0)
 	{
-		data->strategy = START_SIMPLE;
+		data->strategy = 1;
 		return (1);
 	}
 	if (ft_strcmp(argv, "--bench") == 0)
@@ -51,7 +51,7 @@ static int	manage_flags(char *argv, t_data *data)
 	}
 	if (ft_strcmp(argv, "--medium") == 0)
 	{
-		data->strategy = START_MEDIUM;
+		data->strategy = 2;
 		return (1);
 	}
 	return (manage_flags2(argv, data));
@@ -60,6 +60,7 @@ static int	manage_flags(char *argv, t_data *data)
 int	main(int argc, char **argv)
 {
 	int		i;
+	int		d;
 	t_data	data;
 
 	if (argc < 2)
@@ -80,7 +81,11 @@ int	main(int argc, char **argv)
 			i++;
 		}
 	}
-	data.disorder = calc_disorder (data.a);
+	d = calc_disorder(data.a);
+	dispatch_op(&data);
 	print_stack(data.a);
+	if (data.bench_mode == true)
+		bench_mode(&data, d);
+	free (data.a);
 	return (0);
 }

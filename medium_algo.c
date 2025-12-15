@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:12:46 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/13 18:13:38 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/15 14:36:00 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,11 @@ static int max_idx(t_stack *b)
 	return (idx);
 }
 
-void	move_to_b(t_data *data)
+void	move_to_b(t_data *data, int range)
 {
 	int	i;
-	int	range;
 
 	i = 0;
-	range = 15;
 	index_value(data->a);
 	while (data->a != NULL)
 	{
@@ -118,8 +116,8 @@ void	move_to_a(t_data *data)
 	}
 }
 
-void	medium_sort(t_data *data)
+void	medium_sort(t_data *data, int range)
 {
-	move_to_b(data);
+	move_to_b(data, range);
 	move_to_a(data);
 }

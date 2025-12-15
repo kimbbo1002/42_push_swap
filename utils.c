@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:40:14 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/13 18:27:59 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/15 17:37:00 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	init_data(t_data *data)
 	data->a = NULL;
 	data->b = NULL;
 	ft_bzero(&data->operation, sizeof(t_operation));
-	data->strategy = START_ADAPTIVE;
+	data->strategy = 0;
 	data->bench_mode = false;
 	data->disorder = 0.0;
 }
