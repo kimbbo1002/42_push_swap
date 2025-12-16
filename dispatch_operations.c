@@ -32,9 +32,9 @@ void	dispatch_op(t_data *data)
 	if (data->strategy == 1)
 		simple_sort(data);
 	else if (data->strategy == 2)
-		medium_sort (data, 15);
+		medium_sort(data, 15);
 	else if (data->strategy == 3)
-		medium_sort (data, 45);
+		medium_sort(data, 45);
 	else
 	{
 		if (data->disorder < 2000)
@@ -43,8 +43,8 @@ void	dispatch_op(t_data *data)
 				simple_sort(data);
 		}
 		else if (data->disorder >= 2000 && data->disorder < 5000)
-			medium_sort (data, 15);
+			medium_sort(data, 15);
 		else if (data->disorder >= 5000)
-			medium_sort (data, 45);
+			medium_sort(data, 45);
 	}
 }

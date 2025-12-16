@@ -60,9 +60,9 @@ static void	move_min(t_data *data)
 
 void	simple_sort(t_data *data)
 {
-	int	i;
-	int	size;
-	
+	int i;
+	int size;
+
 	size = stack_size(data->a);
 	if (size == 2)
 	{

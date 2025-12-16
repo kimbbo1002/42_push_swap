@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "libftprintf/libftprintf.h"
+#include "push_swap.h"
 
 static void	print_stack(t_stack *stack)
 {
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	init_data (&data);
+	init_data(&data);
 	i = 1;
 	while (i < argc)
 	{
@@ -69,7 +69,7 @@ int	main(int argc, char **argv)
 			i++;
 		else
 		{
-			if (parsing_arg (argv[i], &data.a) == 0)
+			if (parsing_arg(argv[i], &data.a) == 0)
 			{
 				write(2, "ERROR\n", 6);
 				return (0);
@@ -79,9 +79,9 @@ int	main(int argc, char **argv)
 	}
 	data.disorder = calc_disorder(data.a);
 	dispatch_op(&data);
-	//print_stack(data.a);
+	// print_stack(data.a);
 	if (data.bench_mode == true)
 		bench_mode(&data);
-	free (data.a);
+	free(data.a);
 	return (0);
 }

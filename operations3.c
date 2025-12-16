@@ -16,7 +16,7 @@ void	rra(t_data *data)
 {
 	t_stack	*tmp;
 	t_stack	*first;
-	t_stack **a;
+	t_stack	**a;
 
 	a = &(data->a);
 	if (!a || !(*a) || !(*a)->next)

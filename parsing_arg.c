@@ -50,14 +50,14 @@ int	parsing_arg(char *stack, t_stack **digit_stack)
 	new_num = NULL;
 	while (stack[i])
 	{
-		if (ft_atol (stack, &i, &result) == 0)
+		if (ft_atol(stack, &i, &result) == 0)
 			return (0);
 		if (!duplicate(*digit_stack, result))
 			return (0);
 		new_num = store(result);
 		add_stack(digit_stack, new_num);
-		if (stack[i] != 32 && stack[i] != '\0'
-			&& (stack[i] < 9 || stack[i] > 13))
+		if (stack[i] != 32 && stack[i] != '\0' && (stack[i] < 9
+				|| stack[i] > 13))
 			return (0);
 	}
 	return (1);

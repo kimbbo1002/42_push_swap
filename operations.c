@@ -14,8 +14,8 @@
 
 void	sa(t_data *data)
 {
-	int	tmp;
-	t_stack **a;
+	int		tmp;
+	t_stack	**a;
 
 	a = &(data->a);
 	if (!a || !*a || !(*a)->next)
@@ -27,8 +27,8 @@ void	sa(t_data *data)
 
 void	sb(t_data *data)
 {
-	int	tmp;
-	t_stack **b;
+	int		tmp;
+	t_stack	**b;
 
 	b = &(data->b);
 	if (!b || !*b || !(*b)->next)
@@ -47,8 +47,8 @@ void	ss(t_data *data)
 void	pa(t_data *data)
 {
 	t_stack	*tmp;
-	t_stack **a;
-	t_stack **b;
+	t_stack	**a;
+	t_stack	**b;
 
 	a = &(data->a);
 	b = &(data->b);
@@ -63,11 +63,11 @@ void	pa(t_data *data)
 void	pb(t_data *data)
 {
 	t_stack	*tmp;
-	t_stack **a;
-	t_stack **b;
+	t_stack	**a;
+	t_stack	**b;
 
-	a = &(data -> a);
-	b = &(data -> b);
+	a = &(data->a);
+	b = &(data->b);
 	if (!a || !(*a))
 		return ;
 	tmp = (*a);

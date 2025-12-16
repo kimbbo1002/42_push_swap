@@ -14,8 +14,8 @@
 
 static void	index_value(t_stack *a)
 {
-	int	idx;
-	int	tmp;
+	int		idx;
+	int		tmp;
 	t_stack	*num;
 	t_stack	*browse;
 
@@ -39,9 +39,9 @@ static void	index_value(t_stack *a)
 	}
 }
 
-static int max_idx(t_stack *b)
+static int	max_idx(t_stack *b)
 {
-	int idx;
+	int	idx;
 	int	max;
 	int	i;
 
@@ -82,7 +82,7 @@ static void	move_to_b(t_data *data, int range)
 			exec_pb(data);
 			i++;
 		}
-		else 
+		else
 			exec_ra(data);
 	}
 }

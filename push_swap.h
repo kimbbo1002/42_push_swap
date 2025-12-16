@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:00:53 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 17:50:48 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 18:35:48 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_data
 	t_operation	operation;
 	int			strategy;
 	bool		bench_mode;
-	double		disorder;
+	int			disorder;
 }	t_data;
 
 //operations.c

@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:23:28 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/16 17:44:41 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 18:20:55 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	is_format(char c)
 {
 	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u'
-		|| c == 'x' || c == 'X' || c == '%')
+		|| c == 'x' || c == 'X' || c == 'f' || c == '%')
 		return (1);
 	else
 		return (0);
@@ -61,9 +61,9 @@ static int	sort_type(int fd, const char c, va_list arg)
 
 int	ft_printf(int fd, const char *format, ...)
 {
-	int		i;
-	int		count;
-	va_list	arg;
+	int i;
+	int count;
+	va_list arg;
 
 	count = 0;
 	i = 0;

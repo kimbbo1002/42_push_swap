@@ -63,18 +63,18 @@ void	add_stack(t_stack **numbers, t_stack *store)
 	last->next = store;
 }
 
-int stack_size(t_stack *stack)
+int	stack_size(t_stack *stack)
 {
-    int count;
+	int count;
 
-    count = 0;
-    if (!stack)
-        return (0);
-    
-    while (stack)
-    {
-        count++;
-        stack = stack->next;
-    }
-    return (count);
+	count = 0;
+	if (!stack)
+		return (0);
+
+	while (stack)
+	{
+		count++;
+		stack = stack->next;
+	}
+	return (count);
 }

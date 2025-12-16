@@ -16,7 +16,7 @@ void	ra(t_data *data)
 {
 	t_stack	*tmp;
 	t_stack	*last;
-	t_stack **a;
+	t_stack	**a;
 
 	a = &(data->a);
 	if (!a || !*a || !(*a)->next)
@@ -36,7 +36,7 @@ void	rb(t_data *data)
 {
 	t_stack	*tmp1;
 	t_stack	*tmp2;
-	t_stack **b;
+	t_stack	**b;
 
 	b = &(data->b);
 	if (!b || !*b || !(*b)->next)

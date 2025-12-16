@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 15:48:40 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/16 17:44:33 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 18:25:57 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	ft_putdouble(int fd, int n)
 {
 	int	int_part;
 	int	frac_part;
-	int count;
+	int	count;
 
 	count = 0;
 	int_part = n / 100;
@@ -73,6 +73,6 @@ int	ft_putdouble(int fd, int n)
 	count += ft_putchar(fd, '.');
 	if (frac_part < 10)
 		count += ft_putchar(fd, '0');
-	ft_putnbr(fd, frac_part);
+	count += ft_putnbr(fd, frac_part);
 	return (count);
 }
