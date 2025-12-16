@@ -3,108 +3,93 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 11:45:05 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/11/19 14:20:06 by ayhammou         ###   ########.fr       */
+/*   Created: 2025/11/17 14:23:28 by bokim             #+#    #+#             */
+/*   Updated: 2025/12/16 15:22:57 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	handle3(char format, va_list args)
+/*
+return value :
+- number of bytes printed
+- negative number if error occurs
+*/
+
+static int	is_format(char c);
+static int	sort_type(int fd, const char c, va_list arg);
+static int	do_void(int fd, void *arg);
+
+int	ft_printf(int fd, const char *format, ...)
 {
-	void	*p;
-	char	percent;
-
-	if (format == 'p')
-	{
-		p = va_arg(args, void *);
-		return (print_pointer(p));
-	}
-	if (format == '%')
-	{
-		percent = '%';
-		write (1, &percent, 1);
-		return (1);
-	}
-	(void)args;
-	return (0);
-}
-
-static int	handle2(char format, va_list args)
-{
-	unsigned int	u;
-	unsigned int	x;
-	unsigned int	xupper;
-
-	if (format == 'u')
-	{
-		u = va_arg(args, unsigned int);
-		return (print_unsigned(u));
-	}
-	if (format == 'x')
-	{
-		x = va_arg(args, unsigned int);
-		return (print_hex(x, format));
-	}
-	if (format == 'X')
-	{
-		xupper = va_arg(args, unsigned int);
-		return (print_hex(xupper, format));
-	}
-	return (handle3(format, args));
-}
-
-static int	handle(char format, va_list args)
-{
-	int				c;
-	char			*s;
-	long			n;
-
-	if (format == 'c')
-	{
-		c = va_arg(args, int);
-		return (print_char(c));
-	}
-	if (format == 's')
-	{
-		s = va_arg(args, char *);
-		return (print_string(s));
-	}
-	if (format == 'd' || format == 'i')
-	{
-		n = va_arg(args, int);
-		return (print_signed(n));
-	}
-	return (handle2 (format, args));
-}
-
-int	ft_printf(const char *format, ...)
-{
-	va_list	args;
-	int		printed;
 	int		i;
+	int		count;
+	va_list	arg;
 
-	if (format == 0)
-		return (0);
-	printed = 0;
+	count = 0;
 	i = 0;
-	va_start(args, format);
+	if (!format)
+		return (-1);
+	va_start(arg, format);
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1])
+		if (format[i] == '%' && is_format(format[i + 1]))
 		{
-			i++;
-			printed = printed + handle(format[i], args);
+			count += sort_type(fd, format[i + 1], arg);
+			i = i + 2;
 		}
 		else
-		{
-			write (1, &format[i], 1);
-			printed++;
-		}
-		i++;
+			count += ft_putchar(fd, format[i++]);
 	}
-	va_end(args);
-	return (printed);
+	va_end(arg);
+	return (count);
+}
+
+static int	is_format(char c)
+{
+	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u'
+		|| c == 'x' || c == 'X' || c == '%')
+		return (1);
+	else
+		return (0);
+}
+
+static int	sort_type(int fd, const char c, va_list arg)
+{
+	int	count;
+
+	count = 0;
+	if (c == 'c')
+		count = ft_putchar(fd, va_arg(arg, int));
+	else if (c == 's')
+		count = ft_putstr(fd, va_arg(arg, char *));
+	else if (c == 'p')
+		count = do_void(fd, va_arg(arg, void *));
+	else if (c == 'd' || c == 'i')
+		count = ft_putnbr(fd, va_arg(arg, int));
+	else if (c == 'u')
+		count = ft_putunbr(fd, va_arg(arg, unsigned int));
+	else if (c == 'x' || c == 'X')
+		count = ft_puthex(fd, c, va_arg(arg, unsigned int));
+	else if (c == 'f')
+		count = ft_putdouble(fd, va_arg(arg, double));
+	else if (c == '%')
+		count = ft_putchar(fd, c);
+	return (count);
+}
+
+static int	do_void(int fd, void *arg)
+{
+	int	count;
+
+	if (arg == 0)
+	{
+		count = ft_putstr(fd, "(nil)");
+		return (count);
+	}
+	ft_putstr(fd, "0x");
+	count = ft_putvoid(fd, (unsigned long)arg) + 2;
+	return (count);
 }

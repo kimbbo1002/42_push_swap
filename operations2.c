@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 17:29:50 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/13 17:31:06 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 14:45:03 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	ra(t_data *data)
 		last = last->next;
 	}
 	last->next = tmp;
-	data->operation.ra++;
-	data->operation.total++;
 }
 
 void	rb(t_data *data)
@@ -52,16 +50,10 @@ void	rb(t_data *data)
 		tmp2 = tmp2->next;
 	}
 	tmp2->next = tmp1;
-	data->operation.rb++;
-	data->operation.total++;
 }
 
 void	rr(t_data *data)
 {
 	ra(data);
 	rb(data);
-	data->operation.rr++;
-	data->operation.ra--;
-	data->operation.rb--;
-	data->operation.total--;
 }

@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 17:28:24 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/13 17:29:32 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 14:57:54 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	sa(t_data *data)
 	tmp = (*a)->value;
 	(*a)->value = (*a)->next->value;
 	(*a)->next->value = tmp;
-	data->operation.sa++;
-	data->operation.total++;
 }
 
 void	sb(t_data *data)
@@ -38,18 +36,12 @@ void	sb(t_data *data)
 	tmp = (*b)->value;
 	(*b)->value = (*b)->next->value;
 	(*b)->next->value = tmp;
-	data->operation.sb++;
-	data->operation.total++;
 }
 
 void	ss(t_data *data)
 {
 	sa(data);
 	sb(data);
-	data->operation.ss++;
-	data->operation.sa--;
-	data->operation.sb--;
-	data->operation.total--;
 }
 
 void	pa(t_data *data)
@@ -66,8 +58,6 @@ void	pa(t_data *data)
 	(*b) = (*b)->next;
 	tmp->next = *a;
 	*a = tmp;
-	data->operation.pa++;
-	data->operation.total++;
 }
 
 void	pb(t_data *data)
@@ -84,6 +74,4 @@ void	pb(t_data *data)
 	*a = (*a)->next;
 	tmp->next = *b;
 	*b = tmp;
-	data->operation.pb++;
-	data->operation.total++;
 }

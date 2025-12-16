@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:44:57 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/15 17:38:24 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:32:38 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ static int	manage_flags(char *argv, t_data *data)
 int	main(int argc, char **argv)
 {
 	int		i;
-	int		d;
 	t_data	data;
 
 	if (argc < 2)
@@ -81,11 +80,11 @@ int	main(int argc, char **argv)
 			i++;
 		}
 	}
-	d = calc_disorder(data.a);
+	data.disorder = calc_disorder(data.a);
 	dispatch_op(&data);
 	print_stack(data.a);
 	if (data.bench_mode == true)
-		bench_mode(&data, d);
+		bench_mode(&data);
 	free (data.a);
 	return (0);
 }
