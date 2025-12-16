@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 15:51:07 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 17:30:36 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:51:32 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ static void	move_min(t_data *data)
 	if (min_idx <= size / 2)
 	{
 		while (i++ < min_idx)
-			exec_op2(data, "ra");
+			exec_ra(data);
 	}
 	else
 	{
 		while (i++ < size - min_idx)
-			exec_op3(data, "rra");
+			exec_rra(data);
 	}
-	exec_op(data, pb);
+	exec_pb(data);
 }
 
 void	simple_sort(t_data *data)
@@ -67,7 +67,7 @@ void	simple_sort(t_data *data)
 	if (size == 2)
 	{
 		if (data->a->value > data->a->next->value)
-			exec_op(data, "sa");
+			exec_sa(data);
 		return ;
 	}
 	while (size > 0)
@@ -77,5 +77,5 @@ void	simple_sort(t_data *data)
 	}
 	i = 0;
 	while (data->b != NULL)
-		exec_op(data, "pa");
+		exec_pa(data);
 }

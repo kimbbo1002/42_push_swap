@@ -6,11 +6,11 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:23:28 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/16 17:13:05 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:44:41 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 static int	is_format(char c)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 14:32:39 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/11 14:39:52 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:42:29 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libftprintf.h"
 
 void	ft_bzero(void *s, size_t n)
 {

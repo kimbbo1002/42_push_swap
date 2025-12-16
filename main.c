@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:44:57 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 17:36:18 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:45:51 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	print_stack(t_stack *stack)
 {
 	while (stack != NULL)
 	{
-		ft_printf("%d\n", stack->value);
+		ft_printf(1, "%d\n", stack->value);
 		stack = stack->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:24:25 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/16 17:14:54 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:55:04 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	ft_putnbr(int fd, int n);
 int	ft_putunbr(int fd, unsigned int n);
 int	ft_puthex(int fd, char c, unsigned int n);
 int	ft_putvoid(int fd, unsigned long n);
-int	ft_putdouble(int fd, double n);
+int	ft_putdouble(int fd, int n);
+int	ft_numlen(long n);
 
 #endif

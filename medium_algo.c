@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:12:46 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 17:30:00 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:52:25 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,17 +73,17 @@ static void	move_to_b(t_data *data, int range)
 	{
 		if (data->a->index < i)
 		{
-			pb(data);
-			rb(data);
+			exec_pb(data);
+			exec_rb(data);
 			i++;
 		}
 		else if (data->a->index <= (i + range))
 		{
-			pb(data);
+			exec_pb(data);
 			i++;
 		}
 		else 
-			ra(data);
+			exec_ra(data);
 	}
 }
 
@@ -100,7 +100,7 @@ static void	move_to_a(t_data *data)
 		{
 			while (idx_max > 0)
 			{
-				rb(data);
+				exec_rb(data);
 				idx_max--;
 			}
 		}
@@ -108,11 +108,11 @@ static void	move_to_a(t_data *data)
 		{
 			while (idx_max < size)
 			{
-				rrb(data);
+				exec_rrb(data);
 				idx_max++;
 			}
 		}
-		pa(data);
+		exec_pa(data);
 	}
 }
 

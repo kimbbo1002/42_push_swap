@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:00:53 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 17:34:50 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:50:48 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,19 @@ void	rrb(t_data *data);
 void	rrr(t_data *data);
 
 //exec_op.c    
-void	exec_sa(t_data *data, char *op);
-void	exec_sb(t_data *data, char *op);
-void	exec_ss(t_data *data, char *op);
-void	exec_pa(t_data *data, char *op);
-void	exec_pb(t_data *data, char *op);
+void	exec_sa(t_data *data);
+void	exec_sb(t_data *data);
+void	exec_ss(t_data *data);
+void	exec_pa(t_data *data);
+void	exec_pb(t_data *data);
 
-void	exec_ra(t_data *data, char *op);
-void	exec_rb(t_data *data, char *op);
-void	exec_rr(t_data *data, char *op);
+void	exec_ra(t_data *data);
+void	exec_rb(t_data *data);
+void	exec_rr(t_data *data);
 
-void	exec_rra(t_data *data, char *op);
-void	exec_rrb(t_data *data, char *op);
-void	exec_rrr(t_data *data, char *op);
+void	exec_rra(t_data *data);
+void	exec_rrb(t_data *data);
+void	exec_rrr(t_data *data);
 
 //algo
 void	simple_sort(t_data *data);

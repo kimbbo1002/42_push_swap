@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:17:32 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 17:34:37 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:45:22 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	dispatch_op(t_data *data)
 
 	d = calc_disorder(data->a);
 	if (data->strategy == 1)
-		simple_algo(data);
+		simple_sort(data);
 	else if (data->strategy == 2)
 		medium_sort (data, 15);
 	else if (data->strategy == 3)
@@ -43,7 +43,7 @@ void	dispatch_op(t_data *data)
 		if (d < 0.2)
 		{
 			if (is_sorted(data) == 0)
-				simple_algo(data);
+				simple_sort(data);
 		}
 		else if (d >= 0.2 && d < 0.5)
 			medium_sort (data, 15);
