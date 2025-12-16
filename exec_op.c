@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:46:00 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/16 17:52:44 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 18:08:11 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	exec_sa(t_data *data)
 	data->operation.sa++;
 	data->operation.total++;
 	if (!data->bench_mode)
-		ft_printf(1, "%s", "sa");
+		ft_printf(1, "%s", "sa\n");
 }
 
 void	exec_sb(t_data *data)
@@ -27,7 +27,7 @@ void	exec_sb(t_data *data)
 	data->operation.sb++;
 	data->operation.total++;
 	if (!data->bench_mode)
-		ft_printf(1, "%s", "sb");
+		ft_printf(1, "%s", "sb\n");
 }
 
 void	exec_ss(t_data *data)
@@ -36,7 +36,7 @@ void	exec_ss(t_data *data)
 	data->operation.ss++;
 	data->operation.total++;
 	if (!data->bench_mode)
-		ft_printf(1, "%s", "ss");
+		ft_printf(1, "%s", "ss\n");
 }
 
 void	exec_pa(t_data *data)
@@ -45,7 +45,7 @@ void	exec_pa(t_data *data)
 	data->operation.pa++;
 	data->operation.total++;
 	if (!data->bench_mode)
-		ft_printf(1, "%s", "pa");
+		ft_printf(1, "%s", "pa\n");
 }
 
 void	exec_pb(t_data *data)
@@ -54,5 +54,5 @@ void	exec_pb(t_data *data)
 	data->operation.pb++;
 	data->operation.total++;
 	if (!data->bench_mode)
-		ft_printf(1, "%s", "pb");
+		ft_printf(1, "%s", "pb\n");
 }

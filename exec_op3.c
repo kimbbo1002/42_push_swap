@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:54:08 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/16 17:50:09 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 18:08:21 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	exec_rra(t_data *data)
 	data->operation.rra++;
 	data->operation.total++;
 	if (!data->bench_mode)
-		ft_printf(1, "%s", "rra");
+		ft_printf(1, "%s", "rra\n");
 }
 
 void	exec_rrb(t_data *data)
@@ -27,7 +27,7 @@ void	exec_rrb(t_data *data)
 	data->operation.rrb++;
 	data->operation.total++;
 	if (!data->bench_mode)
-		ft_printf(1, "%s", "rrb");
+		ft_printf(1, "%s", "rrb\n");
 }
 
 void	exec_rrr(t_data *data)
@@ -36,5 +36,5 @@ void	exec_rrr(t_data *data)
 	data->operation.rrr++;
 	data->operation.total++;
 	if (!data->bench_mode)
-		ft_printf(1, "%s", "rrr");
+		ft_printf(1, "%s", "rrr\n");
 }

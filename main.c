@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:44:57 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 17:45:51 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 18:11:58 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main(int argc, char **argv)
 	}
 	data.disorder = calc_disorder(data.a);
 	dispatch_op(&data);
-	print_stack(data.a);
+	//print_stack(data.a);
 	if (data.bench_mode == true)
 		bench_mode(&data);
 	free (data.a);

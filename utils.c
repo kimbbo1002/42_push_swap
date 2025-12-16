@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:40:14 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 17:26:12 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 18:03:55 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	init_data(t_data *data)
 	ft_bzero(&data->operation, sizeof(t_operation));
 	data->strategy = 0;
 	data->bench_mode = false;
-	data->disorder = 0.0;
+	data->disorder = 0.00;
 }
 
 int	duplicate(t_stack *stack, int num)
