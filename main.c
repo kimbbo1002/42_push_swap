@@ -6,12 +6,12 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:44:57 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 16:52:51 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:36:18 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libftprintf/ft_printf.h"
+#include "libftprintf/libftprintf.h"
 
 static void	print_stack(t_stack *stack)
 {
@@ -26,14 +26,11 @@ static int	manage_flags2(char *argv, t_data *data)
 {
 	if (ft_strcmp(argv, "--complex") == 0)
 	{
-		data->strategy = "Complex / (O(n log n))";
+		data->strategy = 3;
 		return (1);
 	}
 	if (ft_strcmp(argv, "--adaptive") == 0)
-	{
-		data->strategy = "Adaptive";
 		return (1);
-	}
 	return (0);
 }
 
@@ -46,12 +43,12 @@ static int	manage_flags(char *argv, t_data *data)
 	}
 	if (ft_strcmp(argv, "--simple") == 0)
 	{
-		data->strategy = "Simple / (O(n²))";
+		data->strategy = 1;
 		return (1);
 	}
 	if (ft_strcmp(argv, "--medium") == 0)
 	{
-		data->strategy = "Medium / (O(n√n))";
+		data->strategy = 2;
 		return (1);
 	}
 	return (manage_flags2(argv, data));

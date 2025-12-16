@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:40:14 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/15 17:37:00 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:26:12 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,20 @@ void	add_stack(t_stack **numbers, t_stack *store)
 	while (last->next != NULL)
 		last = last->next;
 	last->next = store;
+}
+
+int stack_size(t_stack *stack)
+{
+    int count;
+
+    count = 0;
+    if (!stack)
+        return (0);
+    
+    while (stack)
+    {
+        count++;
+        stack = stack->next;
+    }
+    return (count);
 }

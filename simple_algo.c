@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 15:51:07 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 14:57:15 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:30:36 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	move_min(t_data *data)
 	exec_op(data, pb);
 }
 
-void	simple_algo(t_data *data)
+void	simple_sort(t_data *data)
 {
 	int	i;
 	int	size;

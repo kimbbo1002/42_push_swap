@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:12:46 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/15 14:36:00 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:30:00 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int max_idx(t_stack *b)
 	return (idx);
 }
 
-void	move_to_b(t_data *data, int range)
+static void	move_to_b(t_data *data, int range)
 {
 	int	i;
 
@@ -87,7 +87,7 @@ void	move_to_b(t_data *data, int range)
 	}
 }
 
-void	move_to_a(t_data *data)
+static void	move_to_a(t_data *data)
 {
 	int	size;
 	int	idx_max;
