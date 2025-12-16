@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:44:57 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 14:32:38 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 16:52:51 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static int	manage_flags2(char *argv, t_data *data)
 {
 	if (ft_strcmp(argv, "--complex") == 0)
 	{
-		data->strategy = 3;
+		data->strategy = "Complex / (O(n log n))";
 		return (1);
 	}
 	if (ft_strcmp(argv, "--adaptive") == 0)
 	{
-		data->strategy = 0;
+		data->strategy = "Adaptive";
 		return (1);
 	}
 	return (0);
@@ -39,19 +39,19 @@ static int	manage_flags2(char *argv, t_data *data)
 
 static int	manage_flags(char *argv, t_data *data)
 {
-	if (ft_strcmp(argv, "--simple") == 0)
-	{
-		data->strategy = 1;
-		return (1);
-	}
 	if (ft_strcmp(argv, "--bench") == 0)
 	{
 		data->bench_mode = true;
 		return (1);
 	}
+	if (ft_strcmp(argv, "--simple") == 0)
+	{
+		data->strategy = "Simple / (O(n²))";
+		return (1);
+	}
 	if (ft_strcmp(argv, "--medium") == 0)
 	{
-		data->strategy = 2;
+		data->strategy = "Medium / (O(n√n))";
 		return (1);
 	}
 	return (manage_flags2(argv, data));

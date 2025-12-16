@@ -6,7 +6,7 @@
 /*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:23:28 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/16 15:22:57 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/16 16:44:22 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static int	sort_type(int fd, const char c, va_list arg)
 	else if (c == 'x' || c == 'X')
 		count = ft_puthex(fd, c, va_arg(arg, unsigned int));
 	else if (c == 'f')
-		count = ft_putdouble(fd, va_arg(arg, double));
+		count = ft_putdouble(fd, va_arg(arg, int));
 	else if (c == '%')
 		count = ft_putchar(fd, c);
 	return (count);
