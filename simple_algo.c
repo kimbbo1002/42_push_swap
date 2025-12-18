@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 15:51:07 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 17:51:32 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/17 14:21:35 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ static void	move_min(t_data *data)
 
 void	simple_sort(t_data *data)
 {
-	int i;
-	int size;
+	int	i;
+	int	size;
 
 	size = stack_size(data->a);
 	if (size == 2)

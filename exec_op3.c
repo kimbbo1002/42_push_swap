@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_op3.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:54:08 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/16 18:08:21 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/18 11:35:52 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	exec_rra(t_data *data)
 	rra(data);
 	data->operation.rra++;
 	data->operation.total++;
-	if (!data->bench_mode)
+	if (!data->bench_mode && !data->checker)
 		ft_printf(1, "%s", "rra\n");
 }
 
@@ -26,7 +26,7 @@ void	exec_rrb(t_data *data)
 	rrb(data);
 	data->operation.rrb++;
 	data->operation.total++;
-	if (!data->bench_mode)
+	if (!data->bench_mode && !data->checker)
 		ft_printf(1, "%s", "rrb\n");
 }
 
@@ -35,6 +35,6 @@ void	exec_rrr(t_data *data)
 	rrr(data);
 	data->operation.rrr++;
 	data->operation.total++;
-	if (!data->bench_mode)
+	if (!data->bench_mode && !data->checker)
 		ft_printf(1, "%s", "rrr\n");
 }
