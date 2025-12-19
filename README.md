@@ -51,11 +51,19 @@ make re			// Recompile everything
 - `rra` / `rrb` / `rrr` : Reverse rotate stack a / b / both downward
 
 ## Algorithm Implementations
-### 1. Simple Algorithm - O(n²)
+### 1. Simple Algorithm - O(n²) - Selection sort adaptation
+- Scans the stack to find the smallest element, pushes it to Stack B, repeats until Stack A is sorted, then pushes everything back. Effective for very small datasets ($N \le 5$) but highly inefficient for larger ones due to repetitive traversal.
 
-### 2. Medium Algorithm - O(n√n)
+### 2. Medium Algorithm - O(n√n) - Chunk-based sorting (divide into √n chunks)
+- Divides Stack A into logical 'chunks' based on value ranges. Elements are pushed to B chunk by chunk. Once all elements are in B, they are pushed back to A in sorted order by finding the maximum. The square root complexity comes from the balance between the number of chunks and the size of each chunk.
 
-### 3. Complex Algorithm - O(n log n)
+### 3. Complex Algorithm - O(n log n) - Radix sort adaptation (LSD or MSD)
+- This implementation utilizes a binary Least Significant Digit (LSD) Radix Sort, a non-comparative integer sorting algorithm.
+    1.  **Normalization**: First, all numbers are mapped to their simplified rank (index from `0` to `N-1`). This allows the algorithm to handle negative numbers and minimizes the number of bits required.
+    2.  **Bitwise Processing**: The algorithm iterates through the bits of the indices (from 0 to `max_bits`). For each bit position `i`:
+        - Elements with a `0` at bit `i` are pushed to Stack B (`pb`).
+        - Elements with a `1` at bit `i` are rotated to the bottom of Stack A (`ra`).
+    3.  **Reconstruction**: After processing the entire stack for a specific bit, all elements from Stack B are pushed back to Stack A (`pa`). This process preserves the relative order established by previous bits.
 
 ### 4. Adaptive Algorithm
 - **Strategy** : Disorder-based strategy selection

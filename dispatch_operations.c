@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:17:32 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/18 11:52:56 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/19 16:03:46 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,17 @@ int	is_sorted(t_data *data)
 
 void	dispatch_op(t_data *data)
 {
-	if (data->strategy == 1)
+	int	size;
+
+	size = stack_size(data->a);
+	if (is_sorted(data) && data->b == NULL)
+		return;
+	if (data->strategy == 1 || size < 6)
 		simple_sort(data);
 	else if (data->strategy == 2)
 		medium_sort(data, 15);
 	else if (data->strategy == 3)
-		medium_sort(data, 45);
+		complex_algo(data);
 	else
 	{
 		if (data->disorder < 2000)
@@ -46,6 +51,6 @@ void	dispatch_op(t_data *data)
 		else if (data->disorder >= 2000 && data->disorder < 5000)
 			medium_sort(data, 15);
 		else if (data->disorder >= 5000)
-			medium_sort(data, 45);
+			complex_algo(data);
 	}
 }
