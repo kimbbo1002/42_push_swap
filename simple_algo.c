@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 15:51:07 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 11:16:10 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/19 17:24:53 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,29 @@ static int	find_min(t_stack *a)
 	return (min_idx);
 }
 
+static void	sort_three1(t_data *data)
+{
+	int	top;
+	int	mid;
+	int	bot;
+
+	top = data->a->value;
+	mid = data->a->next->value;
+	bot = data->a->next->next->value;
+	if (top < mid && mid > bot && top > bot)
+		exec_rra(data);
+	else if (top < bot && bot < mid)
+	{
+		exec_rra(data);
+		exec_sa(data);
+	}
+}
+
 static void	sort_three(t_data *data)
 {
-	int top;
-	int mid;
-	int bot;
+	int	top;
+	int	mid;
+	int	bot;
 
 	top = data->a->value;
 	mid = data->a->next->value;
@@ -57,13 +75,7 @@ static void	sort_three(t_data *data)
 		exec_rra(data);
 		exec_rra (data);
 	}
-	else if (top < mid && mid > bot && top > bot)
-		exec_rra(data);
-	else if (top < bot && bot < mid)
-	{
-		exec_rra(data);
-		exec_sa(data);
-	}
+	sort_three1(data);
 }
 
 static void	move_min(t_data *data)

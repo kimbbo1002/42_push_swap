@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:30:49 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/18 11:55:13 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/19 17:07:38 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static void	error_and_exit(t_data *data, char *line)
 	free_stack(data);
 	exit(1);
 }
+
 static int	take_ops2(t_data *data, char *line)
 {
 	if (ft_strcmp(line, "ra\n") == 0)
@@ -39,10 +40,11 @@ static int	take_ops2(t_data *data, char *line)
 		return (0);
 	return (1);
 }
+
 void	checker(t_data *data)
 {
 	char	*line;
-	
+
 	line = get_next_line (0);
 	while (line != NULL)
 	{

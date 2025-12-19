@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:44:57 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/18 12:23:19 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/19 17:11:37 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 void	free_stack(t_data *data)
 {
 	t_stack	*tmp;
+
 	while (data->a != NULL)
 	{
 		tmp = data->a;

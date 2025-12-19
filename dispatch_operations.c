@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:17:32 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 16:03:46 by ayhammou         ###   ########.fr       */
+/*   Updated: 2025/12/19 17:08:48 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	dispatch_op(t_data *data)
 
 	size = stack_size(data->a);
 	if (is_sorted(data) && data->b == NULL)
-		return;
+		return ;
 	if (data->strategy == 1 || size < 6)
 		simple_sort(data);
 	else if (data->strategy == 2)
