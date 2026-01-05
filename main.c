@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:44:57 by ayhammou          #+#    #+#             */
-/*   Updated: 2026/01/05 13:11:48 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/05 14:08:46 by bokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,15 +102,10 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	if (data.checker == true)
-	{
 		run_checker(&data);
-		free_stack(&data);
-		return (0);
-	}
 	data.disorder = calc_disorder(data.a);
 	dispatch_op(&data);
 	if (data.bench_mode == true)
 		bench_mode(&data);
 	free_stack(&data);
-	return (0);
 }
