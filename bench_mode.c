@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench_mode.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: ayman <ayman@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:44:56 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 17:39:24 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/04 15:06:32 by ayman            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	print_adap_strategy(t_data *data)
 
 static void	print_strategy(t_data *data)
 {
-	int size;
+	int	size;
 
 	size = stack_size(data->a);
 	if (data->strategy == 0 && size >= 6)

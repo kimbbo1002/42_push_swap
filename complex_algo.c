@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   complex_algo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: ayman <ayman@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 13:42:52 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 17:21:58 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/04 16:44:05 by ayman            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,12 @@
 
 static int	get_max_bits(t_data *data)
 {
-	t_stack	*first;
 	int		max_index;
 	int		max_bits;
 
 	max_bits = 0;
 	index_value(data->a);
-	first = data->a;
 	max_index = max_idx(data->a);
-	while (first->next != NULL)
-	{
-		if (first->index > first->next->index)
-			max_index = first->index;
-		first = first->next;
-	}
 	while ((max_index >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
