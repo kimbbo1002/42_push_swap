@@ -102,10 +102,15 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	if (data.checker == true)
+	{
 		run_checker(&data);
+		free_stack(&data);
+		return (0);
+	}
 	data.disorder = calc_disorder(data.a);
 	dispatch_op(&data);
 	if (data.bench_mode == true)
 		bench_mode(&data);
 	free_stack(&data);
+	return (0);
 }
