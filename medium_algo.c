@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   medium_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:12:46 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 17:52:25 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/19 14:29:47 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	index_value(t_stack *a)
+void	index_value(t_stack *a)
 {
 	int		idx;
 	int		tmp;
@@ -39,7 +39,7 @@ static void	index_value(t_stack *a)
 	}
 }
 
-static int	max_idx(t_stack *b)
+int	max_idx(t_stack *b)
 {
 	int	idx;
 	int	max;

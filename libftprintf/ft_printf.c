@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:23:28 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/16 18:20:55 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/17 14:23:04 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ static int	sort_type(int fd, const char c, va_list arg)
 
 int	ft_printf(int fd, const char *format, ...)
 {
-	int i;
-	int count;
-	va_list arg;
+	int		i;
+	int		count;
+	va_list	arg;
 
 	count = 0;
 	i = 0;

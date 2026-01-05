@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench_mode.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:44:56 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 18:21:49 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/19 17:39:24 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ static void	print_adap_strategy(t_data *data)
 
 static void	print_strategy(t_data *data)
 {
-	if (data->strategy == 0)
+	int size;
+
+	size = stack_size(data->a);
+	if (data->strategy == 0 && size >= 6)
 		print_adap_strategy(data);
-	else if (data->strategy == 1)
+	else if (data->strategy == 1 || size < 6)
 		ft_printf(2, "[bench] strategy : Simple / (O(n²))\n");
 	else if (data->strategy == 2)
 		ft_printf(2, "[bench] strategy : Medium / (O(n√n))\n");

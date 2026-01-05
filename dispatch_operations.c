@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   dispatch_operations.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:17:32 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/16 18:00:05 by bokim            ###   ########.fr       */
+/*   Updated: 2025/12/19 17:08:48 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int static	is_sorted(t_data *data)
+int	is_sorted(t_data *data)
 {
 	t_stack	*first;
 
@@ -27,14 +27,20 @@ int static	is_sorted(t_data *data)
 	}
 	return (1);
 }
+
 void	dispatch_op(t_data *data)
 {
-	if (data->strategy == 1)
+	int	size;
+
+	size = stack_size(data->a);
+	if (is_sorted(data) && data->b == NULL)
+		return ;
+	if (data->strategy == 1 || size < 6)
 		simple_sort(data);
 	else if (data->strategy == 2)
 		medium_sort(data, 15);
 	else if (data->strategy == 3)
-		medium_sort(data, 45);
+		complex_algo(data);
 	else
 	{
 		if (data->disorder < 2000)
@@ -45,6 +51,6 @@ void	dispatch_op(t_data *data)
 		else if (data->disorder >= 2000 && data->disorder < 5000)
 			medium_sort(data, 15);
 		else if (data->disorder >= 5000)
-			medium_sort(data, 45);
+			complex_algo(data);
 	}
 }
