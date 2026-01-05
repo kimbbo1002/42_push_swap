@@ -19,12 +19,12 @@ static int	get_max_bits(t_data *data)
 	int		max_bits;
 
 	max_bits = 0;
+	max_index = 0;
 	index_value(data->a);
 	first = data->a;
-	max_index = max_idx(data->a);
 	while (first->next != NULL)
 	{
-		if (first->index > first->next->index)
+		if (first->index > max_index)
 			max_index = first->index;
 		first = first->next;
 	}
