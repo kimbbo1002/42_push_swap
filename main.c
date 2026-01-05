@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:44:57 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 17:11:37 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/05 13:11:48 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,6 @@ static int	manage_flags2(char *argv, t_data *data)
 	}
 	if (ft_strcmp(argv, "--adaptive") == 0)
 		return (1);
-	if (ft_strcmp(argv, "checker") == 0)
-	{
-		data->checker = true;
-		return (1);
-	}
 	return (0);
 }
 
@@ -94,6 +89,8 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	init_data(&data);
+	if (ft_strstr(argv[0], "checker"))
+		data.checker = true;
 	i = 1;
 	while (i < argc)
 	{
@@ -104,9 +101,13 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	}
-	data.disorder = calc_disorder(data.a);
 	if (data.checker == true)
+	{
 		run_checker(&data);
+		free_stack(&data);
+		return (0);
+	}
+	data.disorder = calc_disorder(data.a);
 	dispatch_op(&data);
 	if (data.bench_mode == true)
 		bench_mode(&data);

@@ -6,7 +6,7 @@
 /*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:24:25 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/17 16:01:40 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/05 13:01:22 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 // libft
 int		ft_strcmp(char *s1, char *s2);
 void	ft_bzero(void *s, size_t n);
+char	*ft_strstr(const char *big, const char *little);
 
 // printf
 int		ft_printf(int fd, const char *format, ...);
