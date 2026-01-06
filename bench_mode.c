@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   bench_mode.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:44:56 by ayhammou          #+#    #+#             */
-/*   Updated: 2026/01/05 14:11:26 by bokim            ###   ########.fr       */
+/*   Updated: 2026/01/06 17:14:17 by ayhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 #include "push_swap.h"
 
