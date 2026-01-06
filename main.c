@@ -21,25 +21,6 @@
 		stack = stack->next;
 	}
 } */
-
-void	free_stack(t_data *data)
-{
-	t_stack	*tmp;
-
-	while (data->a != NULL)
-	{
-		tmp = data->a;
-		data->a = data->a->next;
-		free(tmp);
-	}
-	while (data->b != NULL)
-	{
-		tmp = data->b;
-		data->b = data->b->next;
-		free(tmp);
-	}
-}
-
 static void	run_checker(t_data *data)
 {
 	checker(data);
@@ -81,9 +62,28 @@ static int	manage_flags(char *argv, t_data *data)
 	return (manage_flags2(argv, data));
 }
 
+static int	parse_args(int argc, char **argv, t_data *data)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (manage_flags(argv[i], data) == 1)
+		{
+			if (data->checker == true)
+				return (0);
+		}
+		else
+			if (!parsing_arg(argv[i], &data->a))
+				return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
-	int		i;
 	t_data	data;
 
 	if (argc < 2)
@@ -91,26 +91,21 @@ int	main(int argc, char **argv)
 	init_data(&data);
 	if (ft_strstr(argv[0], "checker"))
 		data.checker = true;
-	i = 1;
-	while (i < argc)
+	if (parse_args(argc, argv, &data) == 0)
 	{
-		if (!manage_flags(argv[i], &data) && !parsing_arg(argv[i], &data.a))
-		{
-			write(2, "ERROR\n", 6);
-			return (0);
-		}
-		i++;
-	}
-	if (data.checker == true)
-	{
-		run_checker(&data);
+		write(2, "Error\n", 6);
 		free_stack(&data);
 		return (0);
 	}
-	data.disorder = calc_disorder(data.a);
-	dispatch_op(&data);
-	if (data.bench_mode == true)
-		bench_mode(&data);
+	if (data.checker == true)
+		run_checker(&data);
+	else
+	{
+		data.disorder = calc_disorder(data.a);
+		dispatch_op(&data);
+		if (data.bench_mode == true)
+			bench_mode(&data);
+	}
 	free_stack(&data);
 	return (0);
 }
