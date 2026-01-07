@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:00:53 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 16:02:34 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/07 01:51:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void	exec_rrr(t_data *data);
 void	simple_sort(t_data *data);
 void	medium_sort(t_data *data, int range);
 void	complex_algo(t_data *data);
+void	index_value(t_stack *a);
 
 //parse/disorder/dispatch/bench
 int		parsing_arg(char *stack, t_stack **digit_stack);
@@ -110,7 +111,6 @@ void	add_stack(t_stack **numbers, t_stack *store);
 int		stack_size(t_stack *stack);
 void	free_stack(t_data *data);
 int		is_sorted(t_data *data);
-void	index_value(t_stack *a);
 int		max_idx(t_stack *b);
 
 //bonus
