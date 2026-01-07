@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dispatch_operations.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:17:32 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 17:08:48 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/07 01:36:53 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_sorted(t_data *data)
 	if (!data->a)
 		return (1);
 	first = data->a;
-	while (first->next != NULL)
+	while (first->next)
 	{
 		if ((first->value) > (first->next->value))
 			return (0);
@@ -33,7 +33,7 @@ void	dispatch_op(t_data *data)
 	int	size;
 
 	size = stack_size(data->a);
-	if (is_sorted(data) && data->b == NULL)
+	if (is_sorted(data) && !data->b)
 		return ;
 	if (data->strategy == 1 || size < 6)
 		simple_sort(data);
