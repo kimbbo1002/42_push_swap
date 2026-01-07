@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 15:51:07 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 17:24:53 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/07 01:38:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	find_min(t_stack *a)
 	min_idx = 0;
 	i = 0;
 	min_val = a->value;
-	while (a != NULL)
+	while (a)
 	{
 		if (a->value < min_val)
 		{
@@ -117,6 +117,6 @@ void	simple_sort(t_data *data)
 		size--;
 	}
 	sort_three(data);
-	while (data->b != NULL)
+	while (data->b)
 		exec_pa(data);
 }

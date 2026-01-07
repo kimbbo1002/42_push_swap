@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:12:46 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 14:29:47 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/07 01:40:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	index_value(t_stack *a)
 	if (!a)
 		return ;
 	num = a;
-	while (num != NULL)
+	while (num)
 	{
 		tmp = num->value;
 		browse = a;
-		while (browse != NULL)
+		while (browse)
 		{
 			if (tmp > browse->value)
 				idx++;
@@ -50,7 +50,7 @@ int	max_idx(t_stack *b)
 	idx = 0;
 	i = 0;
 	max = b->value;
-	while (b != NULL)
+	while (b)
 	{
 		if (b->value > max)
 		{
@@ -69,7 +69,7 @@ static void	move_to_b(t_data *data, int range)
 
 	i = 0;
 	index_value(data->a);
-	while (data->a != NULL)
+	while (data->a)
 	{
 		if (data->a->index < i)
 		{
@@ -92,25 +92,19 @@ static void	move_to_a(t_data *data)
 	int	size;
 	int	idx_max;
 
-	while (data->b != NULL)
+	while (data->b)
 	{
 		size = stack_size(data->b);
 		idx_max = max_idx(data->b);
 		if (idx_max < (size / 2))
 		{
-			while (idx_max > 0)
-			{
+			while (idx_max--)
 				exec_rb(data);
-				idx_max--;
-			}
 		}
 		if (idx_max >= (size / 2))
 		{
-			while (idx_max < size)
-			{
+			while (idx_max++ < size)
 				exec_rrb(data);
-				idx_max++;
-			}
 		}
 		exec_pa(data);
 	}
