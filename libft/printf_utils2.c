@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   printf_utils2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bokim <bokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 15:48:40 by bokim             #+#    #+#             */
-/*   Updated: 2025/12/16 18:25:57 by bokim            ###   ########.fr       */
+/*   Updated: 2026/01/08 13:05:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
 int	ft_putnbr(int fd, int n)
 {

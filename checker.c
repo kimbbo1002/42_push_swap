@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:30:49 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 17:07:38 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/08 13:09:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libftprintf/libftprintf.h"
+#include "libft/libft.h"
 
 static void	error_and_exit(t_data *data, char *line)
 {

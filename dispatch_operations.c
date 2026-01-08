@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dispatch_operations.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:17:32 by ayhammou          #+#    #+#             */
-/*   Updated: 2026/01/06 17:14:56 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/08 13:22:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	dispatch_op(t_data *data)
 		complex_algo(data);
 	else
 	{
-		if (data->disorder < 2000 || size < 6)
+		if (data->disorder < 2000)
 		{
 			if (is_sorted(data) == 0)
 				simple_sort(data);

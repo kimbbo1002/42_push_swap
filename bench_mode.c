@@ -3,21 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   bench_mode.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:44:56 by ayhammou          #+#    #+#             */
-/*   Updated: 2026/01/06 17:14:17 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/08 13:23:34 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-#include "push_swap.h"
-
-static void	print_adap_strategy(t_data *data, int size)
+static void	print_adap_strategy(t_data *data)
 {
 	ft_printf(2, "[bench] strategy : Adaptive");
-	if (data->disorder < 2000 || size < 6)
+	if (data->disorder < 2000)
 		ft_printf(2, " (O(n²))\n");
 	else if (data->disorder >= 2000 && data->disorder < 5000)
 		ft_printf(2, " (O(n√n))\n");
@@ -27,11 +25,8 @@ static void	print_adap_strategy(t_data *data, int size)
 
 static void	print_strategy(t_data *data)
 {
-	int	size;
-
-	size = stack_size(data->a);
 	if (data->strategy == 0)
-		print_adap_strategy(data, size);
+		print_adap_strategy(data);
 	else if (data->strategy == 1)
 		ft_printf(2, "[bench] strategy : Simple / (O(n²))\n");
 	else if (data->strategy == 2)
