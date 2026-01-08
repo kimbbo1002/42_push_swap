@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 16:40:14 by ayhammou          #+#    #+#             */
-/*   Updated: 2026/01/08 14:19:58 by marvin           ###   ########.fr       */
+/*   Created: 2026/01/08 14:39:14 by marvin            #+#    #+#             */
+/*   Updated: 2026/01/09 00:19:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	init_data(t_data *data)
-{
-	data->a = NULL;
-	data->b = NULL;
-	ft_bzero(&data->operation, sizeof(t_operation));
-	data->strategy = 0;
-	data->bench_mode = false;
-	data->disorder = 0.00;
-}
+#include "push_swap_bonus.h"
 
 int	duplicate(t_stack *stack, int num)
 {
@@ -63,17 +53,53 @@ void	add_stack(t_stack **numbers, t_stack *store)
 	last->next = store;
 }
 
-int	stack_size(t_stack *stack)
+static int	ft_atol(char *stack, int *i, long *result)
 {
-	int	count;
+	long	total;
+	int		sign;
 
-	count = 0;
-	if (!stack)
-		return (0);
-	while (stack)
+	sign = 1;
+	total = 0;
+	while ((stack[*i] >= 9 && stack[*i] <= 13) || stack[*i] == 32)
+		(*i)++;
+	if (stack[*i] == '-' || stack[*i] == '+')
 	{
-		count++;
-		stack = stack->next;
+		if (stack[*i] == '-')
+			sign = -1;
+		(*i)++;
 	}
-	return (count);
+	if (stack[*i] < 48 || stack[*i] > 57)
+		return (0);
+	while (stack[*i] >= 48 && stack[*i] <= 57)
+	{
+		total = (total * 10) + (stack[*i] - '0');
+		(*i)++;
+	}
+	if ((total * sign) > 2147483647 || (total * sign) < -2147483648)
+		return (0);
+	*result = (total * sign);
+	return (1);
+}
+
+int	parsing_arg(char *stack, t_stack **digit_stack)
+{
+	int		i;
+	long	result;
+	t_stack	*new_num;
+
+	i = 0;
+	new_num = NULL;
+	while (stack[i])
+	{
+		if (ft_atol(stack, &i, &result) == 0)
+			return (0);
+		if (!duplicate(*digit_stack, result))
+			return (0);
+		new_num = store(result);
+		add_stack(digit_stack, new_num);
+		if (stack[i] != 32 && stack[i] != '\0' && (stack[i] < 9
+				|| stack[i] > 13))
+			return (0);
+	}
+	return (1);
 }

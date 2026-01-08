@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 14:06:56 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/18 11:17:28 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/08 14:38:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 char	*alloc_newbuffer(size_t i, size_t alloc, char *buf)
 {
@@ -66,12 +66,12 @@ char	*gnl_strchr(const char *s, int c)
 
 	if (s == 0)
 		return (NULL);
-	car = (char) c;
+	car = (char)c;
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == car)
-			return ((char *) &s[i]);
+			return ((char *)&s[i]);
 		i++;
 	}
 	return (NULL);
@@ -93,7 +93,7 @@ static char	*fill(char *join, char *s1, char *s2)
 			join[i] = s1[i];
 			i++;
 		}
-		free (s1);
+		free(s1);
 	}
 	while (s2[j])
 	{
@@ -117,8 +117,8 @@ char	*gnl_strjoin(char *s1, char *s2)
 	join = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (join == 0)
 	{
-		free (s1);
-		free (s2);
+		free(s1);
+		free(s2);
 		return (NULL);
 	}
 	return (fill(join, s1, s2));

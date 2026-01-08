@@ -33,7 +33,13 @@ OBJS = $(SRCS:.c=.o)
 BONUS_DIR = bonus/
 BONUS_FILES = checker_bonus.c \
 			get_next_line_bonus.c \
-			get_next_line_utils_bonus.c
+			get_next_line_utils_bonus.c \
+			main_bonus.c \
+			operations_bonus.c \
+			operations2_bonus.c \
+			operations3_bonus.c \
+			parsing_bonus.c \
+			utils_bonus.c
 BONUS_SRCS = $(addprefix $(BONUS_DIR), $(BONUS_FILES))
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
