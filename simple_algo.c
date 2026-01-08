@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayhammou <ayhammou@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 15:51:07 by ayhammou          #+#    #+#             */
-/*   Updated: 2025/12/19 17:24:53 by ayhammou         ###   ########.fr       */
+/*   Updated: 2026/01/08 12:57:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,48 +34,6 @@ static int	find_min(t_stack *a)
 		i++;
 	}
 	return (min_idx);
-}
-
-static void	sort_three1(t_data *data)
-{
-	int	top;
-	int	mid;
-	int	bot;
-
-	top = data->a->value;
-	mid = data->a->next->value;
-	bot = data->a->next->next->value;
-	if (top < mid && mid > bot && top > bot)
-		exec_rra(data);
-	else if (top < bot && bot < mid)
-	{
-		exec_rra(data);
-		exec_sa(data);
-	}
-}
-
-static void	sort_three(t_data *data)
-{
-	int	top;
-	int	mid;
-	int	bot;
-
-	top = data->a->value;
-	mid = data->a->next->value;
-	bot = data->a->next->next->value;
-	if (top > mid && mid < bot && top < bot)
-		exec_sa(data);
-	else if (top > mid && mid > bot)
-	{
-		exec_sa(data);
-		exec_rra(data);
-	}
-	else if (top > mid && mid < bot && top > bot)
-	{
-		exec_rra(data);
-		exec_rra (data);
-	}
-	sort_three1(data);
 }
 
 static void	move_min(t_data *data)
@@ -111,12 +69,11 @@ void	simple_sort(t_data *data)
 			exec_sa(data);
 		return ;
 	}
-	while (size > 3)
+	while (size)
 	{
 		move_min(data);
 		size--;
 	}
-	sort_three(data);
 	while (data->b != NULL)
 		exec_pa(data);
 }
