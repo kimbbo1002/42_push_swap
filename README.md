@@ -111,7 +111,8 @@ ARG=$(shuf -i 0-999 -n 100); ./push_swap $ARG | ./checker $ARG
 ```
 
 ## Group Contributions
-- Both contributors participated in algorithm design discussions, debugging sessions, and performance optimization.
+- bokim : disorder calculation, simple/complex algorithm, operation execution functions, readme/makefile
+- ayhammou : parsing, operation functions, medium/complex algorithm, bonus checker
 
 ## Resources
 - [Sorting Large Datasets with Limited Memory: The Chunked Merge Sort Approach](https://satyadeepmaheshwari.medium.com/sorting-large-datasets-with-limited-memory-the-chunked-merge-sort-approach-318275275c81)
