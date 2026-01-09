@@ -57,7 +57,7 @@ make re			// Recompile everything
 ### 2. Medium Algorithm - O(n√n) - Chunk-based sorting (divide into √n chunks)
 - Divides Stack A into logical 'chunks' based on value ranges. Elements are pushed to B chunk by chunk. Once all elements are in B, they are pushed back to A in sorted order by finding the maximum. The square root complexity comes from the balance between the number of chunks and the size of each chunk.
 
-### 3. Complex Algorithm - O(n log n) - Radix sort adaptation (LSD or MSD)
+### 3. Complex Algorithm - O(n log n) - Radix sort adaptation (LSD)
 - This implementation utilizes a binary Least Significant Digit (LSD) Radix Sort, a non-comparative integer sorting algorithm.
     1.  **Normalization**: First, all numbers are mapped to their simplified rank (index from `0` to `N-1`). This allows the algorithm to handle negative numbers and minimizes the number of bits required.
     2.  **Bitwise Processing**: The algorithm iterates through the bits of the indices (from 0 to `max_bits`). For each bit position `i`:
